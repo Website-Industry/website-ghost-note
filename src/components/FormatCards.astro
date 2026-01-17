@@ -1,0 +1,42 @@
+---
+const formats = [
+  {
+    title: 'CDMC',
+    description: 'Cours de Musique Chill - Format collectif autonome',
+    href: '/formats/cdmc',
+  },
+  {
+    title: 'Ateliers',
+    description: 'Rythmique & chant improvisé',
+    href: '/formats/ateliers',
+  },
+  {
+    title: 'Cours individuels',
+    description: 'Théorie, rythmique, MAO',
+    href: '/formats/cours-individuels',
+  },
+  {
+    title: 'Tutorat Ableton',
+    description: 'Interventions via Sawup',
+    href: '/formats/tutorat-ableton',
+  },
+];
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {formats.map((format) => (
+    <a 
+      href={format.href}
+      class="block p-8 rounded-lg border border-fg/10 hover:border-accent/50 hover:shadow-lg transition-all duration-200 group"
+    >
+      <h3 class="text-2xl font-semibold text-fg mb-3 group-hover:text-accent transition-colors">
+        {format.title}
+      </h3>
+      <p class="text-muted mb-4">{format.description}</p>
+      <span class="text-sm text-accent font-medium group-hover:underline">
+        Découvrir →
+      </span>
+    </a>
+  ))}
+</div>
+

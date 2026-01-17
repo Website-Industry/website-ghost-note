@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+
+const allEvents = await getCollection('events');
+const upcomingEvents = allEvents
+  .filter(event => new Date(event.data.date) >= new Date())
+  .sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime())
+  .slice(0, 3);
+---
+
+{upcomingEvents.length > 0 ? (
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {upcomingEvents.map((event) => {
+      const eventDate = new Date(event.data.date);
+      const formattedDate = eventDate.toLocaleDateString('fr-FR', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+      });
+      
+      return (
+        <div class="p-6 rounded-lg border border-fg/10 hover:border-accent/50 transition-colors">
+          <div class="text-sm text-muted mb-2">{formattedDate}</div>
+          <h3 class="text-xl font-semibold text-fg mb-2">{event.data.title}</h3>
+          <div class="space-y-1 text-sm text-muted mb-4">
+            {event.data.type && (
+              <div class="inline-block px-2 py-1 bg-fg/5 rounded text-xs font-medium">
+                {event.data.type}
+              </div>
+            )}
+            {event.data.city && <div>📍 {event.data.city}</div>}
+            {event.data.venue && <div>🏢 {event.data.venue}</div>}
+            {event.data.duration && <div>⏱️ {event.data.duration}</div>}
+            {event.data.level && <div>📊 {event.data.level}</div>}
+            {event.data.price && <div>💰 {event.data.price}</div>}
+          </div>
+          {event.data.cta_url && (
+            <a 
+              href={event.data.cta_url}
+              class="inline-block text-sm text-accent hover:underline font-medium"
+            >
+              {event.data.cta_label || 'En savoir plus'} →
+            </a>
+          )}
+        </div>
+      );
+    })}
+  </div>
+) : (
+  <div class="text-center py-12 text-muted">
+    <p class="mb-4">Aucun événement à venir pour le moment.</p>
+    <a href="/contact" class="text-accent hover:underline">Contactez-nous pour être informé·e</a>
+  </div>
+)}
+

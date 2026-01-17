@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import FormatCards from '../components/FormatCards.astro';
+import UpcomingEvents from '../components/UpcomingEvents.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import Button from '../components/Button.astro';
+
+const faqItems = [
+  {
+    question: "Dois-je avoir un niveau musical pour participer ?",
+    answer: "Non, les ateliers et formats sont accessibles à tous les niveaux. L'approche est progressive et adaptée à chacun.",
+  },
+  {
+    question: "Quel matériel est nécessaire ?",
+    answer: "Pour la plupart des formats, aucun matériel spécifique n'est requis. Pour les cours MAO et le tutorat Ableton, un ordinateur avec Ableton Live est nécessaire.",
+  },
+  {
+    question: "Les ateliers sont-ils payants ?",
+    answer: "Certains ateliers sont gratuits, d'autres sont payants. Les modalités sont précisées pour chaque événement.",
+  },
+  {
+    question: "Puis-je suivre plusieurs formats ?",
+    answer: "Absolument ! Chaque format est indépendant et complémentaire. Vous pouvez participer à plusieurs formats selon vos envies et disponibilités.",
+  },
+];
+---
+
+<BaseLayout 
+  title="Ghost-Note - Transmission musicale : rythme, écoute, création, impro"
+  description="Ghost-Note propose des formats variés pour approfondir le rythme, l'écoute, la théorie musicale et l'improvisation. Ateliers collectifs, cours individuels, CDMC et tutorat Ableton."
+>
+  <!-- Hero -->
+  <Section class="text-center">
+    <h1 class="text-5xl md:text-6xl font-bold text-fg mb-6 text-balance">
+      Ghost-Note
+    </h1>
+    <p class="text-xl md:text-2xl text-muted mb-8 max-w-2xl mx-auto text-balance">
+      Transmission musicale : rythme, écoute, création, impro
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <Button href="/formats">Découvrir les formats</Button>
+      <Button href="/contact" variant="outline">Nous contacter</Button>
+    </div>
+  </Section>
+
+  <!-- La vision -->
+  <Section id="vision" class="bg-fg/5">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-fg mb-8 text-center">La vision</h2>
+      <div class="prose prose-lg mx-auto text-muted space-y-6">
+        <p>
+          Ghost-Note est né d'une envie de transmettre la musique autrement. Loin des formats académiques rigides, 
+          nous explorons le rythme, l'écoute et la création dans une approche conviviale et exigeante.
+        </p>
+        <p>
+          Que vous soyez débutant·e ou musicien·ne confirmé·e, chaque format est conçu pour vous faire progresser 
+          tout en préservant le plaisir de la pratique. Nous croyons en une pédagogie participative, où l'expérimentation 
+          et l'échange sont au cœur de l'apprentissage.
+        </p>
+        <p>
+          Rythme signé, improvisation vocale, théorie musicale, MAO, écoute active... Autant de facettes que nous 
+          explorons ensemble pour développer votre sensibilité musicale et votre autonomie créative.
+        </p>
+      </div>
+      <div class="mt-8 text-center">
+        <Button href="/vision" variant="outline">En savoir plus sur notre approche</Button>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Les formats -->
+  <Section id="formats">
+    <h2 class="text-3xl md:text-4xl font-bold text-fg mb-4 text-center">Les formats</h2>
+    <p class="text-muted text-center mb-12 max-w-2xl mx-auto">
+      Plusieurs formats pour explorer la musique selon vos envies et votre rythme
+    </p>
+    <FormatCards />
+  </Section>
+
+  <!-- À quoi s'attendre -->
+  <Section id="pedagogie" class="bg-fg/5">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-fg mb-8 text-center">À quoi s'attendre</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="text-4xl mb-4">🎯</div>
+          <h3 class="text-xl font-semibold text-fg mb-2">Concret</h3>
+          <p class="text-muted text-sm">
+            Des outils et techniques directement applicables dans votre pratique musicale
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-4">🤝</div>
+          <h3 class="text-xl font-semibold text-fg mb-2">Participatif</h3>
+          <p class="text-muted text-sm">
+            Échanges, exercices pratiques et mise en situation pour apprendre en faisant
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-4">📈</div>
+          <h3 class="text-xl font-semibold text-fg mb-2">Progressif</h3>
+          <p class="text-muted text-sm">
+            Un parcours adapté à votre niveau, avec des étapes claires et mesurables
+          </p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Prochains rendez-vous -->
+  <Section id="events">
+    <h2 class="text-3xl md:text-4xl font-bold text-fg mb-4 text-center">Prochains rendez-vous</h2>
+    <p class="text-muted text-center mb-12 max-w-2xl mx-auto">
+      Découvrez les prochains ateliers et événements
+    </p>
+    <UpcomingEvents />
+    <div class="mt-8 text-center">
+      <Button href="/agenda" variant="outline">Voir tout l'agenda</Button>
+    </div>
+  </Section>
+
+  <!-- FAQ -->
+  <Section id="faq" class="bg-fg/5">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-fg mb-8 text-center">Questions fréquentes</h2>
+      <FAQAccordion items={faqItems} />
+    </div>
+  </Section>
+
+  <!-- CTA final -->
+  <Section class="text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-fg mb-4">Prêt·e à commencer ?</h2>
+    <p class="text-muted mb-8 max-w-2xl mx-auto">
+      Contactez-nous pour discuter de vos besoins et trouver le format qui vous correspond
+    </p>
+    <Button href="/contact">Nous contacter</Button>
+  </Section>
+</BaseLayout>
+

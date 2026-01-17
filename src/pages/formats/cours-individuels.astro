@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import Button from '../../components/Button.astro';
+---
+
+<BaseLayout 
+  title="Cours Individuels - Ghost-Note"
+  description="Cours individuels personnalisés en théorie musicale, rythmique et MAO. Accompagnement adapté à vos objectifs et votre niveau."
+>
+  <!-- Hero -->
+  <Section class="text-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-fg mb-6">Cours Individuels</h1>
+    <p class="text-xl text-muted max-w-2xl mx-auto">
+      Accompagnement personnalisé en théorie, rythmique ou MAO
+    </p>
+  </Section>
+
+  <!-- Présentation -->
+  <Section>
+    <div class="max-w-3xl mx-auto">
+      <div class="prose prose-lg text-muted space-y-6">
+        <p>
+          Les cours individuels Ghost-Note offrent un accompagnement personnalisé adapté à vos objectifs, 
+          votre niveau et votre rythme. Que vous souhaitiez approfondir la théorie musicale, développer 
+          votre sens du rythme ou maîtriser la production musicale assistée par ordinateur, nous construisons 
+          ensemble un parcours sur mesure.
+        </p>
+        <p>
+          Chaque séance est l'occasion d'aborder des points précis, de pratiquer des exercices adaptés et 
+          de recevoir des retours personnalisés. L'objectif est de vous donner les outils et la confiance 
+          pour progresser de manière autonome.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Thématiques -->
+  <Section class="bg-fg/5">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-fg mb-6">Thématiques</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 bg-bg rounded-lg border border-fg/10">
+          <h3 class="text-xl font-semibold text-fg mb-3">Théorie musicale</h3>
+          <ul class="space-y-2 text-muted text-sm">
+            <li>• Harmonie et accords</li>
+            <li>• Gammes et modes</li>
+            <li>• Analyse musicale</li>
+            <li>• Solfège appliqué</li>
+          </ul>
+        </div>
+        <div class="p-6 bg-bg rounded-lg border border-fg/10">
+          <h3 class="text-xl font-semibold text-fg mb-3">Rythmique</h3>
+          <ul class="space-y-2 text-muted text-sm">
+            <li>• Sens de la pulsation</li>
+            <li>• Polyrythmies</li>
+            <li>• Rythme signé</li>
+            <li>• Groove et placement</li>
+          </ul>
+        </div>
+        <div class="p-6 bg-bg rounded-lg border border-fg/10">
+          <h3 class="text-xl font-semibold text-fg mb-3">MAO</h3>
+          <ul class="space-y-2 text-muted text-sm">
+            <li>• Production musicale</li>
+            <li>• Mixage et mastering</li>
+            <li>• Sound design</li>
+            <li>• Workflow créatif</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Exemples d'objectifs -->
+  <Section>
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-fg mb-6">Exemples d'objectifs</h2>
+      <div class="space-y-4">
+        <div class="p-4 border-l-4 border-accent bg-fg/5">
+          <p class="text-muted">
+            <strong class="text-fg">Comprendre l'harmonie</strong> pour pouvoir composer vos propres morceaux
+          </p>
+        </div>
+        <div class="p-4 border-l-4 border-accent bg-fg/5">
+          <p class="text-muted">
+            <strong class="text-fg">Développer votre sens du rythme</strong> pour jouer avec plus de précision et de groove
+          </p>
+        </div>
+        <div class="p-4 border-l-4 border-accent bg-fg/5">
+          <p class="text-muted">
+            <strong class="text-fg">Maîtriser Ableton Live</strong> pour produire vos propres tracks
+          </p>
+        </div>
+        <div class="p-4 border-l-4 border-accent bg-fg/5">
+          <p class="text-muted">
+            <strong class="text-fg">Structurer vos connaissances</strong> après des années de pratique autodidacte
+          </p>
+        </div>
+        <div class="p-4 border-l-4 border-accent bg-fg/5">
+          <p class="text-muted">
+            <strong class="text-fg">Préparer un examen</strong> ou un concours d'entrée en école de musique
+          </p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Modalités -->
+  <Section class="bg-fg/5">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-fg mb-6">Modalités</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="text-lg font-semibold text-fg mb-2">Durée</h3>
+          <p class="text-muted">Séances de 1h ou 1h30, selon vos besoins</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-fg mb-2">Format</h3>
+          <p class="text-muted">Présentiel ou visio (selon disponibilités et localisation)</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-fg mb-2">Fréquence</h3>
+          <p class="text-muted">À définir ensemble selon vos objectifs et disponibilités</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-fg mb-2">Tarif</h3>
+          <p class="text-muted">[Tarif à définir] - Contactez-nous pour plus d'informations</p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <Section class="text-center">
+    <h2 class="text-3xl font-bold text-fg mb-4">Demander un premier échange</h2>
+    <p class="text-muted mb-8 max-w-2xl mx-auto">
+      Contactez-nous pour discuter de vos besoins et objectifs. Nous pourrons ensemble définir 
+      un parcours adapté et répondre à toutes vos questions.
+    </p>
+    <Button href="/contact">Nous contacter</Button>
+  </Section>
+
+  <!-- Retour -->
+  <Section class="text-center">
+    <Button href="/formats" variant="outline">← Retour aux formats</Button>
+  </Section>
+</BaseLayout>
+

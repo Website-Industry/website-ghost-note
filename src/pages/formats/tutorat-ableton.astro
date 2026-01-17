@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import Button from '../../components/Button.astro';
+---
+
+<BaseLayout 
+  title="Tutorat Ableton Live - Ghost-Note"
+  description="Interventions ponctuelles en tutorat Ableton Live via Sawup. Accompagnement sur workflow, arrangement, sound design et production."
+>
+  <!-- Hero -->
+  <Section class="text-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-fg mb-6">Tutorat Ableton</h1>
+    <p class="text-xl text-muted max-w-2xl mx-auto">
+      Interventions ponctuelles via Sawup
+    </p>
+  </Section>
+
+  <!-- Présentation -->
+  <Section>
+    <div class="max-w-3xl mx-auto">
+      <div class="prose prose-lg text-muted space-y-6">
+        <p>
+          Le tutorat Ableton Live est proposé dans le cadre d'interventions ponctuelles via 
+          <a href="https://sawup.example" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Sawup</a>. 
+          Ces sessions sont conçues pour vous accompagner sur des points précis de votre projet musical.
+        </p>
+        <p>
+          Que vous soyez débutant·e ou producteur·rice confirmé·e, nous abordons ensemble les aspects 
+          techniques et créatifs d'Ableton Live pour faire avancer votre projet.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Ce que j'accompagne -->
+  <Section class="bg-fg/5">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-fg mb-6">Ce que j'accompagne</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 bg-bg rounded-lg border border-fg/10">
+          <h3 class="text-xl font-semibold text-fg mb-3">Workflow</h3>
+          <p class="text-muted text-sm">
+            Organisation de votre projet, utilisation efficace des outils, raccourcis et astuces pour gagner en fluidité
+          </p>
+        </div>
+        <div class="p-6 bg-bg rounded-lg border border-fg/10">
+          <h3 class="text-xl font-semibold text-fg mb-3">Arrangement</h3>
+          <p class="text-muted text-sm">
+            Structure de votre morceau, transitions, développement d'idées, équilibre des sections
+          </p>
+        </div>
+        <div class="p-6 bg-bg rounded-lg border border-fg/10">
+          <h3 class="text-xl font-semibold text-fg mb-3">Sound Design</h3>
+          <p class="text-muted text-sm">
+            Création de sons, utilisation des synthés et effets, traitement audio créatif
+          </p>
+        </div>
+        <div class="p-6 bg-bg rounded-lg border border-fg/10">
+          <h3 class="text-xl font-semibold text-fg mb-3">Production</h3>
+          <p class="text-muted text-sm">
+            Mixage, mastering, finalisation de vos tracks, préparation pour la diffusion
+          </p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Format -->
+  <Section>
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-fg mb-6">Format</h2>
+      <div class="prose prose-lg text-muted space-y-4">
+        <p>
+          Les sessions de tutorat se déroulent via Sawup, une plateforme dédiée à l'accompagnement musical. 
+          Chaque session est adaptée à vos besoins spécifiques et à votre projet en cours.
+        </p>
+        <p>
+          Vous pouvez réserver une session ponctuelle pour traiter un point précis, ou opter pour un suivi 
+          régulier selon vos besoins.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <Section class="bg-fg/5 text-center">
+    <h2 class="text-3xl font-bold text-fg mb-4">Réserver une session</h2>
+    <p class="text-muted mb-8 max-w-2xl mx-auto">
+      Accédez à Sawup pour réserver une session de tutorat ou contactez-nous pour plus d'informations
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <Button href="https://sawup.example" target="_blank" rel="noopener noreferrer">
+        Accéder à Sawup →
+      </Button>
+      <Button href="/contact" variant="outline">Nous contacter</Button>
+    </div>
+  </Section>
+
+  <!-- Retour -->
+  <Section class="text-center">
+    <Button href="/formats" variant="outline">← Retour aux formats</Button>
+  </Section>
+</BaseLayout>
+
