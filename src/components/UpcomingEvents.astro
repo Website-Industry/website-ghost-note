@@ -19,27 +19,30 @@ const upcomingEvents = allEvents
       });
       
       return (
-        <div class="p-6 rounded-lg border border-fg/10 hover:border-accent/50 transition-colors">
-          <div class="text-sm text-muted mb-2">{formattedDate}</div>
-          <h3 class="text-xl font-semibold text-fg mb-2">{event.data.title}</h3>
-          <div class="space-y-1 text-sm text-muted mb-4">
+        <div class="p-6 rounded-xl glass-effect border border-border hover:border-accent hover:glow transition-all duration-300 transform hover:-translate-y-1">
+          <div class="text-sm text-fg-muted mb-2 font-medium">{formattedDate}</div>
+          <h3 class="text-xl font-semibold text-fg mb-3">{event.data.title}</h3>
+          <div class="space-y-2 text-sm text-fg-muted mb-4">
             {event.data.type && (
-              <div class="inline-block px-2 py-1 bg-fg/5 rounded text-xs font-medium">
+              <div class="inline-block px-3 py-1 bg-accent/20 text-accent rounded-full text-xs font-medium">
                 {event.data.type}
               </div>
             )}
-            {event.data.city && <div>📍 {event.data.city}</div>}
-            {event.data.venue && <div>🏢 {event.data.venue}</div>}
-            {event.data.duration && <div>⏱️ {event.data.duration}</div>}
-            {event.data.level && <div>📊 {event.data.level}</div>}
-            {event.data.price && <div>💰 {event.data.price}</div>}
+            {event.data.city && <div class="flex items-center gap-2">📍 {event.data.city}</div>}
+            {event.data.venue && <div class="flex items-center gap-2">🏢 {event.data.venue}</div>}
+            {event.data.duration && <div class="flex items-center gap-2">⏱️ {event.data.duration}</div>}
+            {event.data.level && <div class="flex items-center gap-2">📊 {event.data.level}</div>}
+            {event.data.price && <div class="flex items-center gap-2">💰 {event.data.price}</div>}
           </div>
           {event.data.cta_url && (
             <a 
               href={event.data.cta_url}
-              class="inline-block text-sm text-accent hover:underline font-medium"
+              class="inline-flex items-center gap-2 text-sm text-accent hover:underline font-medium group"
             >
-              {event.data.cta_label || 'En savoir plus'} →
+              {event.data.cta_label || 'En savoir plus'}
+              <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
             </a>
           )}
         </div>
@@ -47,9 +50,9 @@ const upcomingEvents = allEvents
     })}
   </div>
 ) : (
-  <div class="text-center py-12 text-muted">
-    <p class="mb-4">Aucun événement à venir pour le moment.</p>
-    <a href="/contact" class="text-accent hover:underline">Contactez-nous pour être informé·e</a>
+  <div class="text-center py-12 text-fg-muted">
+    <p class="mb-4 text-lg">Aucun événement à venir pour le moment.</p>
+    <a href="/contact" class="text-accent hover:underline font-medium">Contactez-nous pour être informé·e</a>
   </div>
 )}
 

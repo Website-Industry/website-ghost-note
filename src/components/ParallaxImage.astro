@@ -1,0 +1,86 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  speed?: number;
+  class?: string;
+  overlay?: boolean;
+}
+
+const { src, alt, speed = 0.5, class: className = '', overlay = true } = Astro.props;
+---
+
+<div class={`parallax-container ${className}`} data-parallax-speed={speed}>
+  <img 
+    src={src} 
+    alt={alt}
+    class="parallax-image"
+    data-parallax
+    loading="lazy"
+  />
+  {overlay && <div class="parallax-overlay"></div>}
+  <slot />
+</div>
+
+<script>
+  function initParallax() {
+    const containers = document.querySelectorAll('[data-parallax-speed]');
+    
+    const handleScroll = () => {
+      containers.forEach((container) => {
+        const speed = parseFloat(container.getAttribute('data-parallax-speed') || '0.5');
+        const image = container.querySelector('[data-parallax]') as HTMLElement;
+        
+        if (!image) return;
+        
+        const rect = container.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Calculate if element is in viewport
+        if (rect.bottom >= 0 && rect.top <= windowHeight) {
+          const scrolled = window.pageYOffset;
+          const elementTop = rect.top + scrolled;
+          const elementHeight = rect.height;
+          const yPos = -(scrolled - elementTop) * speed;
+          
+          image.style.transform = `translate3d(0, ${yPos}px, 0)`;
+        }
+      });
+    };
+    
+    // Throttle scroll events
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+    
+    // Initial call
+    handleScroll();
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initParallax);
+  } else {
+    initParallax();
+  }
+</script>
+
+<style>
+  .parallax-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .parallax-image {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+</style>
+

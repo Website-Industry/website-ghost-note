@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ImageSection from '../components/ImageSection.astro';
 import FormatCards from '../components/FormatCards.astro';
 import UpcomingEvents from '../components/UpcomingEvents.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
@@ -24,40 +26,44 @@ const faqItems = [
     answer: "Absolument ! Chaque format est indépendant et complémentaire. Vous pouvez participer à plusieurs formats selon vos envies et disponibilités.",
   },
 ];
+
+// Chemins vers les images
+const heroImage = '/images/hero.jpg';
+const visionImage = '/images/vision.jpg';
+const rythmeImage = '/images/rythme.png';
 ---
 
 <BaseLayout 
   title="Ghost-Note - Transmission musicale : rythme, écoute, création, impro"
   description="Ghost-Note propose des formats variés pour approfondir le rythme, l'écoute, la théorie musicale et l'improvisation. Ateliers collectifs, cours individuels, CDMC et tutorat Ableton."
 >
-  <!-- Hero -->
-  <Section class="text-center">
-    <h1 class="text-5xl md:text-6xl font-bold text-fg mb-6 text-balance">
-      Ghost-Note
-    </h1>
-    <p class="text-xl md:text-2xl text-muted mb-8 max-w-2xl mx-auto text-balance">
-      Transmission musicale : rythme, écoute, création, impro
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <Button href="/formats">Découvrir les formats</Button>
-      <Button href="/contact" variant="outline">Nous contacter</Button>
-    </div>
-  </Section>
+  <!-- Hero avec parallaxe -->
+  <HeroSection />
 
-  <!-- La vision -->
-  <Section id="vision" class="bg-fg/5">
+  <!-- La vision avec image parallaxe -->
+  <ImageSection
+    image={visionImage}
+    alt="La vision Ghost-Note"
+    title="La vision"
+    content="Ghost-Note est né d'une envie de transmettre la musique autrement. Loin des formats académiques rigides, nous explorons le rythme, l'écoute et la création dans une approche conviviale et exigeante. Que vous soyez débutant·e ou musicien·ne confirmé·e, chaque format est conçu pour vous faire progresser tout en préservant le plaisir de la pratique."
+    imagePosition="left"
+    speed={0.4}
+  />
+  
+  <!-- Section approfondir le rythme -->
+  <ImageSection
+    image={rythmeImage}
+    alt="Approfondir le rythme"
+    title="Approfondir le rythme"
+    content="Ces ateliers sont pour vous si vous désirez mieux comprendre comment fonctionne le rythme, approfondir votre pratique et votre sensibilité à la pulsation et ses rouages. Inspiré de nombreuses pratiques, nous découvrirons ensemble les multiples facettes du rythme."
+    imagePosition="right"
+    speed={0.5}
+  />
+  
+  <!-- Section vision texte -->
+  <Section id="vision" class="bg-bg-secondary py-24">
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-fg mb-8 text-center">La vision</h2>
-      <div class="prose prose-lg mx-auto text-muted space-y-6">
-        <p>
-          Ghost-Note est né d'une envie de transmettre la musique autrement. Loin des formats académiques rigides, 
-          nous explorons le rythme, l'écoute et la création dans une approche conviviale et exigeante.
-        </p>
-        <p>
-          Que vous soyez débutant·e ou musicien·ne confirmé·e, chaque format est conçu pour vous faire progresser 
-          tout en préservant le plaisir de la pratique. Nous croyons en une pédagogie participative, où l'expérimentation 
-          et l'échange sont au cœur de l'apprentissage.
-        </p>
+      <div class="prose prose-lg mx-auto text-fg-muted space-y-6">
         <p>
           Rythme signé, improvisation vocale, théorie musicale, MAO, écoute active... Autant de facettes que nous 
           explorons ensemble pour développer votre sensibilité musicale et votre autonomie créative.
@@ -70,16 +76,16 @@ const faqItems = [
   </Section>
 
   <!-- Les formats -->
-  <Section id="formats">
-    <h2 class="text-3xl md:text-4xl font-bold text-fg mb-4 text-center">Les formats</h2>
-    <p class="text-muted text-center mb-12 max-w-2xl mx-auto">
+  <Section id="formats" class="bg-bg py-24">
+    <h2 class="text-3xl md:text-5xl font-bold text-fg mb-4 text-center gradient-text">Les formats</h2>
+    <p class="text-fg-muted text-center mb-12 max-w-2xl mx-auto text-lg">
       Plusieurs formats pour explorer la musique selon vos envies et votre rythme
     </p>
     <FormatCards />
   </Section>
 
   <!-- À quoi s'attendre -->
-  <Section id="pedagogie" class="bg-fg/5">
+  <Section id="pedagogie" class="bg-bg-secondary py-24">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold text-fg mb-8 text-center">À quoi s'attendre</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -109,9 +115,9 @@ const faqItems = [
   </Section>
 
   <!-- Prochains rendez-vous -->
-  <Section id="events">
-    <h2 class="text-3xl md:text-4xl font-bold text-fg mb-4 text-center">Prochains rendez-vous</h2>
-    <p class="text-muted text-center mb-12 max-w-2xl mx-auto">
+  <Section id="events" class="bg-bg py-24">
+    <h2 class="text-3xl md:text-5xl font-bold text-fg mb-4 text-center">Prochains rendez-vous</h2>
+    <p class="text-fg-muted text-center mb-12 max-w-2xl mx-auto text-lg">
       Découvrez les prochains ateliers et événements
     </p>
     <UpcomingEvents />
@@ -121,7 +127,7 @@ const faqItems = [
   </Section>
 
   <!-- FAQ -->
-  <Section id="faq" class="bg-fg/5">
+  <Section id="faq" class="bg-bg-secondary py-24">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold text-fg mb-8 text-center">Questions fréquentes</h2>
       <FAQAccordion items={faqItems} />
@@ -129,9 +135,9 @@ const faqItems = [
   </Section>
 
   <!-- CTA final -->
-  <Section class="text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-fg mb-4">Prêt·e à commencer ?</h2>
-    <p class="text-muted mb-8 max-w-2xl mx-auto">
+  <Section class="text-center bg-bg py-24">
+    <h2 class="text-3xl md:text-5xl font-bold text-fg mb-4 gradient-text">Prêt·e à commencer ?</h2>
+    <p class="text-fg-muted mb-8 max-w-2xl mx-auto text-lg">
       Contactez-nous pour discuter de vos besoins et trouver le format qui vous correspond
     </p>
     <Button href="/contact">Nous contacter</Button>

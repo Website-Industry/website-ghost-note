@@ -3,7 +3,7 @@ const currentPath = Astro.url.pathname;
 const isActive = (path: string) => currentPath === path || currentPath.startsWith(path + '/');
 ---
 
-<header class="border-b border-fg/10">
+<header class="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-border backdrop-blur-md">
   <nav class="container mx-auto px-6 py-4">
     <div class="flex items-center justify-between">
       <a href="/" class="text-2xl font-bold text-fg hover:text-accent transition-colors">
@@ -65,7 +65,7 @@ const isActive = (path: string) => currentPath === path || currentPath.startsWit
       </div>
       
       <!-- Mobile menu button -->
-      <button class="md:hidden text-fg" id="mobile-menu-button" aria-label="Menu">
+      <button class="md:hidden text-fg hover:text-accent transition-colors" id="mobile-menu-button" aria-label="Menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -75,11 +75,11 @@ const isActive = (path: string) => currentPath === path || currentPath.startsWit
     <!-- Mobile menu -->
     <div class="md:hidden hidden mt-4 pb-4" id="mobile-menu">
       <div class="flex flex-col gap-4">
-        <a href="/" class="text-sm font-medium text-muted hover:text-fg">Accueil</a>
-        <a href="/vision" class="text-sm font-medium text-muted hover:text-fg">Vision</a>
-        <a href="/formats" class="text-sm font-medium text-muted hover:text-fg">Formats</a>
-        <a href="/agenda" class="text-sm font-medium text-muted hover:text-fg">Agenda</a>
-        <a href="/contact" class="text-sm font-medium text-muted hover:text-fg">Contact</a>
+        <a href="/" class="text-sm font-medium text-fg-muted hover:text-accent transition-colors">Accueil</a>
+        <a href="/vision" class="text-sm font-medium text-fg-muted hover:text-accent transition-colors">Vision</a>
+        <a href="/formats" class="text-sm font-medium text-fg-muted hover:text-accent transition-colors">Formats</a>
+        <a href="/agenda" class="text-sm font-medium text-fg-muted hover:text-accent transition-colors">Agenda</a>
+        <a href="/contact" class="text-sm font-medium text-fg-muted hover:text-accent transition-colors">Contact</a>
       </div>
     </div>
   </nav>
