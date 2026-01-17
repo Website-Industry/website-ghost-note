@@ -2,8 +2,9 @@
 import ParallaxImage from './ParallaxImage.astro';
 import Button from './Button.astro';
 
-// Chemin vers l'image hero
+// Chemin vers l'image hero et le logo
 const heroImage = '/images/hero.jpg';
+const logoImage = '/images/logo.png';
 ---
 
 <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden -mt-20 pt-20">
@@ -15,9 +16,13 @@ const heroImage = '/images/hero.jpg';
   >
     <div class="parallax-content container mx-auto px-6 py-24 text-center relative z-10">
       <div class="max-w-4xl mx-auto">
-        <h1 class="text-6xl md:text-8xl font-bold text-fg mb-6 text-balance tracking-tight">
-          Ghost-Note
-        </h1>
+        <div class="mb-8 flex justify-center">
+          <img 
+            src={logoImage} 
+            alt="Ghost-Note Logo" 
+            class="h-32 md:h-48 w-auto mx-auto float-animation"
+          />
+        </div>
         <p class="text-xl md:text-3xl text-fg-muted mb-12 max-w-2xl mx-auto text-balance leading-relaxed">
           Transmission musicale : rythme, écoute, création, impro
         </p>
