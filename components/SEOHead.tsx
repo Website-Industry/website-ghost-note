@@ -70,6 +70,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     setMetaTag('twitter:title', fullTitle);
     setMetaTag('twitter:description', description);
     setMetaTag('twitter:image', fullImage);
+    setMetaTag('twitter:site', '@ghostnote_tls', true); // Remplacer par votre handle Twitter si vous en avez un
 
     // Canonical
     setLinkTag('canonical', fullUrl);

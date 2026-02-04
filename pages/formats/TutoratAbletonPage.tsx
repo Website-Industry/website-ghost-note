@@ -8,7 +8,7 @@ const TutoratAbletonPage: React.FC = () => {
       <SEOHead
         title="Tutorat Ableton Live"
         description="Accompagnement dans le cadre de la formation professionnelle Sawup. Je suis tuteur certifié pour accompagner les apprenants sur Ableton Live avec des rendez-vous individuels et un suivi personnalisé."
-        url="https://ghost-note.fr/#/thematiques/tutorat-ableton"
+        url="https://ghost-note.fr/thematiques/tutorat-ableton"
         image="/images/logo/logo-with-text.png"
       />
       <div className="pt-32 pb-24 px-6 animate-fade-in">

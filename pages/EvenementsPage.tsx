@@ -9,7 +9,7 @@ const EvenementsPage: React.FC = () => {
       <SEOHead
         title="Événements & Ateliers"
         description="Découvrez les prochains événements et ateliers organisés par Ghost-Note : rythme signé, improvisation vocale, communication gestuelle. Restez informé·e des dates à venir."
-        url="https://ghost-note.fr/#/evenements"
+        url="https://ghost-note.fr/evenements"
         image="/images/logo/logo-with-text.png"
       />
       <div className="pt-32 pb-24 px-6 animate-fade-in">

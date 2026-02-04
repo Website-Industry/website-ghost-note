@@ -10,13 +10,13 @@ const CoursIndividuelsPage: React.FC = () => {
       <SEOHead
         title="Cours Individuels"
         description="Cours individuels personnalisés en théorie musicale, rythmique et MAO. Accompagnement adapté à vos objectifs et votre niveau. Coaching personnalisé depuis le home-studio à Toulouse."
-        url="https://ghost-note.fr/#/formats/cours-individuels"
+        url="https://ghost-note.fr/formats/cours-individuels"
         image="/images/batterie.jpg"
       />
       <StructuredData data={courseSchema(
         'Cours Individuels Ghost-Note',
         'Accompagnement personnalisé en théorie, rythmique ou MAO adapté à vos objectifs.',
-        'https://ghost-note.fr/#/formats/cours-individuels'
+          'https://ghost-note.fr/formats/cours-individuels'
       )} />
       <div className="pt-32 pb-24 px-6 animate-fade-in">
       <div className="max-w-7xl mx-auto">

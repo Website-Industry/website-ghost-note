@@ -9,7 +9,7 @@ const FormatsIndex: React.FC = () => {
       <SEOHead
         title="Les Formats"
         description="Découvrez tous les formats proposés par Ghost-Note : CDMC, ateliers rythmique & chant, cours individuels. Plusieurs façons d'explorer la musique selon vos envies et votre rythme."
-        url="https://ghost-note.fr/#/formats"
+        url="https://ghost-note.fr/formats"
         image="/images/atelier.jpg"
       />
       <div className="pt-32 pb-24 px-6 animate-fade-in">

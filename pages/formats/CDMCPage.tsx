@@ -11,13 +11,13 @@ const CDMCPage: React.FC = () => {
       <SEOHead
         title="CDMC - Cours de Musique Chill"
         description="CDMC (Cours de Musique Chill) : format collectif mensuel pour explorer théorie, pratique, écoute et MAO dans une ambiance chill. Une soirée par mois dans une ambiance conviviale."
-        url="https://ghost-note.fr/#/formats/cdmc"
+        url="https://ghost-note.fr/formats/cdmc"
         image="/images/atelier.jpg"
       />
       <StructuredData data={courseSchema(
         'CDMC - Cours de Musique Chill',
         'Format collectif mensuel pour explorer théorie, pratique, écoute et MAO dans une ambiance chill.',
-        'https://ghost-note.fr/#/formats/cdmc'
+          'https://ghost-note.fr/formats/cdmc'
       )} />
       <div className="pt-32 pb-24 px-6 animate-fade-in">
         <div className="max-w-7xl mx-auto">

@@ -36,7 +36,7 @@ const Themes: React.FC = () => {
       <SEOHead
         title="Les Thématiques"
         description="Les 4 piliers de Ghost-Note : Piano, Théorie Musicale, Rythmique et MAO."
-        url="https://ghost-note.fr/#/thematiques"
+        url="https://ghost-note.fr/thematiques"
         image="/images/logo/logo-with-text.png"
       />
       <div className="pt-32 pb-24 px-6 animate-fade-in">
