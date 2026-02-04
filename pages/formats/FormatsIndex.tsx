@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEOHead from '../../components/SEOHead';
+import NewsletterButton from '../../components/NewsletterButton';
 
 const FormatsIndex: React.FC = () => {
   return (
@@ -165,6 +166,15 @@ const FormatsIndex: React.FC = () => {
               <span className="text-slate-600 text-sm font-bold italic">Site bientôt disponible</span>
             </article>
           </div>
+        </section>
+
+        {/* Newsletter CTA */}
+        <section className="mt-32 text-center px-6 py-16 bg-gradient-to-b from-transparent to-white/5 rounded-2xl">
+          <h2 className="text-3xl font-bold mb-4 text-ghost-gold">Restez informé·e</h2>
+          <p className="text-slate-400 mb-6 font-light max-w-xl mx-auto">
+            Recevez les dernières actualités sur les ateliers et événements à venir.
+          </p>
+          <NewsletterButton variant="primary" size="md" />
         </section>
       </div>
       </div>

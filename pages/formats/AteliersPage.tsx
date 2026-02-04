@@ -23,7 +23,7 @@ const AteliersPage: React.FC = () => {
 
         {/* Présentation */}
         <section className="mb-32 max-w-4xl mx-auto">
-          <div className="prose prose-lg text-slate-300 space-y-6">
+          <div className="prose prose-lg text-slate-300 space-y-6 mb-12">
             <p className="text-lg leading-relaxed font-light">
               Les ateliers Ghost-Note proposent d'explorer le rythme signé et le chant improvisé dans un cadre 
               convivial et bienveillant. Accessibles à tous les niveaux, ces sessions ponctuelles permettent de 
@@ -34,6 +34,46 @@ const AteliersPage: React.FC = () => {
               efficacité redoutable. L'improvisation vocale, quant à elle, libère la créativité et développe 
               l'écoute et la réactivité.
             </p>
+            <div className="mt-8">
+              <Link
+                to="/communication-gestuelle"
+                className="inline-flex items-center gap-2 text-ghost-gold hover:text-ghost-gold/80 font-semibold transition-colors"
+              >
+                En savoir plus sur le Rythme Signé et le Vocal Painting
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Présentation - 3 Cards */}
+        <section className="mb-32 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="card-gradient p-8 rounded-2xl border border-white/10 hover:border-ghost-gold/50 transition-all">
+              <h2 className="text-2xl font-bold mb-4 text-ghost-gold">Des ateliers pour toustes</h2>
+              <p className="text-lg leading-relaxed font-light text-slate-300">
+                Accessibles à toute personne désirant mieux appréhender le rythme, les ateliers proposés par Ghost Note sont construits pour être divertissant, challengeant et compréhensibles par tout le monde.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="card-gradient p-8 rounded-2xl border border-white/10 hover:border-ghost-orange/50 transition-all">
+              <h2 className="text-2xl font-bold mb-4 text-ghost-orange">Approfondir le rythme</h2>
+              <p className="text-lg leading-relaxed font-light text-slate-300">
+                Ces ateliers sont pour vous si vous désirez mieux comprendre comment fonctionne le rythme, approfondir votre pratique et votre sensibilité à la pulsation et ses rouages. Inspiré de nombreuses pratiques, je vous propose de découvrir ensemble les multiples facettes du rythme.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="card-gradient p-8 rounded-2xl border border-white/10 hover:border-ghost-gold/50 transition-all">
+              <h2 className="text-2xl font-bold mb-4 text-ghost-gold">Rythmicien & Animateur</h2>
+              <p className="text-lg leading-relaxed font-light text-slate-300">
+                Laissez-vous porter par l'énergie de Marc Charton, batteur depuis 15 ans, explorateur rythmique, animateur d'ateliers et formateur. Bénéficiez de l'expérience d'un rythmicien confirmé.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -96,11 +136,31 @@ const AteliersPage: React.FC = () => {
           </div>
         </section>
 
+        {/* Lien vers les événements */}
+        <section className="mb-32 max-w-4xl mx-auto text-center">
+          <div className="bg-gradient-to-r from-ghost-gold/10 to-white/5 p-12 rounded-2xl border border-ghost-gold/30">
+            <h2 className="text-4xl font-bold mb-6 text-ghost-gold">Événements à venir</h2>
+            <p className="text-lg text-slate-300 mb-8 font-light max-w-2xl mx-auto">
+              Découvrez les prochains ateliers et événements organisés par Ghost-Note. 
+              Restez informé·e des dates et lieux des sessions à venir.
+            </p>
+            <Link
+              to="/evenements"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-ghost-gold text-ghost-black rounded-full font-bold hover:bg-ghost-gold/80 transition-all"
+            >
+              Voir tous les événements
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="mb-16 text-center">
           <h2 className="text-4xl font-bold mb-6">Participer à un atelier</h2>
           <p className="text-slate-400 mb-8 max-w-2xl mx-auto font-light">
-            Consultez l'agenda pour voir les prochains ateliers ou contactez-moi pour être informé·e
+            Contactez-moi pour être informé·e des prochains ateliers
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
