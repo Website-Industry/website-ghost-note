@@ -11,15 +11,35 @@ const CommunicationGestuellePage: React.FC = () => {
         url="https://ghost-note.fr/#/communication-gestuelle"
         image="/images/logo/logo-with-text.png"
       />
-      <div className="pt-32 pb-24 px-6 animate-fade-in">
-        <div className="max-w-7xl mx-auto">
-          {/* Hero */}
-          <header className="mb-20 text-center">
+      <div className="animate-fade-in">
+        {/* Hero */}
+        <header className="pt-32 pb-20 px-6 text-center">
+          <div className="max-w-7xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-serif italic mb-6">Le Rythme Signé & le Vocal Painting</h1>
-            <p className="text-xl text-slate-400 max-w-3xl mx-auto font-light">
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto font-light mb-12">
               Des langages gestuels au service de la création collective
             </p>
-          </header>
+          </div>
+        </header>
+
+        {/* Image avec effet parallaxe */}
+        <div className="relative w-full h-[50vh] min-h-[400px] overflow-hidden mb-20">
+          <div 
+            className="absolute inset-0 w-full h-[110%] bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: 'url(/images/rythme_signe.png)',
+              backgroundAttachment: 'fixed',
+              backgroundPosition: 'center top'
+            }}
+            role="img"
+            aria-label="Rythme Signé - gestes de direction musicale en temps réel"
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-ghost-black/30 to-ghost-black"></div>
+          </div>
+        </div>
+
+        <div className="px-6 pb-24">
+          <div className="max-w-7xl mx-auto">
 
           {/* Pourquoi j'utilise ces outils */}
           <section className="mb-32 max-w-4xl mx-auto">
@@ -57,6 +77,17 @@ const CommunicationGestuellePage: React.FC = () => {
           <section className="mb-32 max-w-4xl mx-auto">
             <div className="bg-gradient-to-br from-white/5 to-white/0 p-10 rounded-2xl border border-ghost-orange/30 mb-8">
               <h2 className="text-4xl font-bold mb-6 text-ghost-orange">Le Rythme Signé : composer la rythmique en temps réel</h2>
+              
+              {/* Vidéo */}
+              <div className="mt-8 aspect-video rounded-lg overflow-hidden border border-white/10">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/CPzZAvCMKHw"
+                  title="Le Rythme Signé en action"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
             </div>
 
             <div className="space-y-8">
@@ -110,6 +141,17 @@ const CommunicationGestuellePage: React.FC = () => {
           <section className="mb-32 max-w-4xl mx-auto">
             <div className="bg-gradient-to-br from-white/5 to-white/0 p-10 rounded-2xl border border-ghost-gold/30 mb-8">
               <h2 className="text-4xl font-bold mb-6 text-ghost-gold">Le Vocal Painting : diriger l'improvisation vocale</h2>
+              
+              {/* Vidéo */}
+              <div className="mt-8 aspect-video rounded-lg overflow-hidden border border-white/10">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/txaqbJLTnhU"
+                  title="Le Vocal Painting en action"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
             </div>
 
             <div className="space-y-8">
@@ -255,6 +297,7 @@ const CommunicationGestuellePage: React.FC = () => {
               ← Retour aux ateliers
             </Link>
           </section>
+          </div>
         </div>
       </div>
     </>
