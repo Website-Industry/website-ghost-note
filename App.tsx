@@ -59,10 +59,13 @@ const App: React.FC = () => {
 
 // Helper component to scroll to top on route change
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    // Ne pas scroller vers le haut si on a un hash (ancre)
+    if (!hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
   return null;
 };
 
