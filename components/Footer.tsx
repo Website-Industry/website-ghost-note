@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NewsletterButton from './NewsletterButton';
 
 const Footer: React.FC = () => {
   return (
@@ -86,6 +87,14 @@ const Footer: React.FC = () => {
             </ul>
           </div>
         </nav>
+
+        <div>
+          <h4 className="text-ghost-gold font-bold mb-6 text-sm uppercase tracking-widest">Newsletter</h4>
+          <p className="text-slate-400 text-sm leading-relaxed mb-4">
+            Restez informé·e des prochains ateliers et événements.
+          </p>
+          <NewsletterButton variant="outline" size="sm" />
+        </div>
 
         <address className="not-italic">
           <h4 className="text-ghost-gold font-bold mb-6 text-sm uppercase tracking-widest">Localisation</h4>

@@ -16,6 +16,7 @@ const TutoratAbletonPage = lazy(() => import('./pages/formats/TutoratAbletonPage
 const Themes = lazy(() => import('./pages/Themes'));
 const LeLooperPage = lazy(() => import('./pages/LeLooperPage'));
 const CommunicationGestuellePage = lazy(() => import('./pages/CommunicationGestuellePage'));
+const EvenementsPage = lazy(() => import('./pages/EvenementsPage'));
 const AboutContact = lazy(() => import('./pages/AboutContact'));
 
 // Loading component
@@ -45,6 +46,7 @@ const App: React.FC = () => {
               <Route path="/thematiques/tutorat-ableton" element={<TutoratAbletonPage />} />
               <Route path="/thematiques/lelooper" element={<LeLooperPage />} />
               <Route path="/communication-gestuelle" element={<CommunicationGestuellePage />} />
+              <Route path="/evenements" element={<EvenementsPage />} />
               <Route path="/a-propos" element={<AboutContact />} />
             </Routes>
           </Suspense>

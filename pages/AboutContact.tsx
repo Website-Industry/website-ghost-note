@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import SEOHead from '../components/SEOHead';
 import StructuredData from '../components/StructuredData';
+import NewsletterButton from '../components/NewsletterButton';
 
 const AboutContact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -139,8 +140,14 @@ const AboutContact: React.FC = () => {
         <div className="max-w-4xl mx-auto bg-ghost-brown/20 p-8 md:p-16 rounded-3xl border border-ghost-orange/20 shadow-2xl">
           <div className="text-center mb-12">
             <h2 id="contact-heading" className="text-4xl font-serif italic mb-4">On discute ?</h2>
-            <p className="text-slate-400 font-light">
+            <p className="text-slate-400 font-light mb-6">
               Une question, un projet ou juste l'envie de commencer : envoyez-moi un message.
+            </p>
+            <div className="flex justify-center mb-8">
+              <NewsletterButton variant="secondary" size="md" />
+            </div>
+            <p className="text-sm text-slate-500 italic">
+              Ou abonnez-vous à la newsletter pour rester informé·e des événements
             </p>
           </div>
           

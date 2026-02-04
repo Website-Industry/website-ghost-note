@@ -41,7 +41,7 @@ const Themes: React.FC = () => {
       />
       <div className="pt-32 pb-24 px-6 animate-fade-in">
       <div className="max-w-7xl mx-auto">
-        <header className="mb-20">
+        <header className="mb-20 text-center">
           <h1 className="text-5xl md:text-7xl font-serif italic mb-6">Les 4 Piliers</h1>
         </header>
 

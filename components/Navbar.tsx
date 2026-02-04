@@ -169,6 +169,18 @@ const Navbar: React.FC = () => {
 
           <li role="none">
             <Link
+              to="/evenements"
+              className={`text-sm font-medium tracking-wide transition-colors hover:text-ghost-gold focus:outline-none focus:ring-2 focus:ring-ghost-gold focus:ring-offset-2 focus:ring-offset-ghost-black rounded ${
+                isActive('/evenements') ? 'text-ghost-gold' : 'text-slate-400'
+              }`}
+              aria-current={isActive('/evenements') ? 'page' : undefined}
+            >
+              Événements
+            </Link>
+          </li>
+
+          <li role="none">
+            <Link
               to="/thematiques"
               className={`text-sm font-medium tracking-wide transition-colors hover:text-ghost-gold focus:outline-none focus:ring-2 focus:ring-ghost-gold focus:ring-offset-2 focus:ring-offset-ghost-black rounded ${
                 isActive('/thematiques') ? 'text-ghost-gold' : 'text-slate-400'

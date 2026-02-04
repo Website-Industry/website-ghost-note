@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEOHead from '../components/SEOHead';
 import StructuredData, { organizationSchema } from '../components/StructuredData';
+import NewsletterButton from '../components/NewsletterButton';
 
 const Home: React.FC = () => {
   const phrases = [
@@ -246,6 +247,19 @@ const Home: React.FC = () => {
             "J'ai suivi le cours d'initiation avec grand plaisir. J'ai ainsi pu acquérir des bases solides en théorie musicale de manière ludique et approfondie. Ces notions me sont déjà utiles pour mieux comprendre ce que je fais lorsque je compose de la musique électronique."
             <footer className="mt-6 not-italic font-bold text-ghost-gold text-sm">— Flo</footer>
           </blockquote>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="py-24 px-6 bg-gradient-to-b from-ghost-black to-stone-900/30" aria-labelledby="newsletter-heading">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 id="newsletter-heading" className="text-4xl font-serif italic mb-4 text-ghost-gold">
+            Restez informé·e
+          </h2>
+          <p className="text-lg text-slate-400 mb-8 font-light max-w-2xl mx-auto">
+            Recevez les dernières actualités sur les ateliers, événements et nouvelles offres de Ghost-Note.
+          </p>
+          <NewsletterButton variant="primary" size="lg" />
         </div>
       </section>
       </div>
