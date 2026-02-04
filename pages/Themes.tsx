@@ -35,7 +35,7 @@ const Themes: React.FC = () => {
     <>
       <SEOHead
         title="Les Thématiques"
-        description="Les 4 piliers de Ghost-Note : Piano, Théorie Musicale, Rythmique et MAO. Chaque thématique est disponible selon vos besoins en cours individuels, collectifs (CDMC) ou ateliers."
+        description="Les 4 piliers de Ghost-Note : Piano, Théorie Musicale, Rythmique et MAO."
         url="https://ghost-note.fr/#/thematiques"
         image="/images/logo/logo-with-text.png"
       />
@@ -43,9 +43,6 @@ const Themes: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <header className="mb-20">
           <h1 className="text-5xl md:text-7xl font-serif italic mb-6">Les 4 Piliers</h1>
-          <p className="text-xl text-slate-400 max-w-2xl font-light">
-            Chaque thématique est disponible selon vos besoins en cours individuels, collectifs (CDMC) ou ateliers.
-          </p>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8" role="list">

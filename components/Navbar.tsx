@@ -5,14 +5,58 @@ import { Link, useLocation } from 'react-router-dom';
 const Navbar: React.FC = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isFormatsDropdownOpen, setIsFormatsDropdownOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const formatsDropdownRef = useRef<HTMLDivElement>(null);
+  const formatsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   
   const isActive = (path: string) => location.pathname === path;
+  const isFormatsActive = location.pathname.startsWith('/formats');
 
   // Fermer le menu au changement de route
   useEffect(() => {
     setIsMenuOpen(false);
+    setIsFormatsDropdownOpen(false);
   }, [location.pathname]);
+
+  // Nettoyer le timeout au démontage
+  useEffect(() => {
+    return () => {
+      if (formatsTimeoutRef.current) {
+        clearTimeout(formatsTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  // Fermer le dropdown si on clique en dehors
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (formatsDropdownRef.current && !formatsDropdownRef.current.contains(event.target as Node)) {
+        setIsFormatsDropdownOpen(false);
+      }
+    };
+
+    if (isFormatsDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isFormatsDropdownOpen]);
+
+  const handleFormatsMouseEnter = () => {
+    if (formatsTimeoutRef.current) {
+      clearTimeout(formatsTimeoutRef.current);
+    }
+    setIsFormatsDropdownOpen(true);
+  };
+
+  const handleFormatsMouseLeave = () => {
+    formatsTimeoutRef.current = setTimeout(() => {
+      setIsFormatsDropdownOpen(false);
+    }, 200); // Délai de 200ms avant la fermeture
+  };
 
   // Gestion de la navigation au clavier
   const handleKeyDown = (e: React.KeyboardEvent, action: () => void) => {
@@ -21,6 +65,12 @@ const Navbar: React.FC = () => {
       action();
     }
   };
+
+  const formatsItems = [
+    { label: 'Cours Individuels', path: '/formats/cours-individuels' },
+    { label: 'Cours Collectifs', path: '/formats/cdmc' },
+    { label: 'Ateliers', path: '/formats/ateliers' },
+  ];
 
   return (
     <header 
@@ -51,24 +101,95 @@ const Navbar: React.FC = () => {
         </Link>
 
         <ul className="flex items-center gap-8" role="list">
-          {[
-            { label: 'Accueil', path: '/' },
-            { label: 'Formats', path: '/formats' },
-            { label: 'Thématiques', path: '/thematiques' },
-            { label: 'À Propos', path: '/a-propos' },
-          ].map((item) => (
-            <li key={item.path} role="none">
+          <li role="none">
+            <Link
+              to="/"
+              className={`text-sm font-medium tracking-wide transition-colors hover:text-ghost-gold focus:outline-none focus:ring-2 focus:ring-ghost-gold focus:ring-offset-2 focus:ring-offset-ghost-black rounded ${
+                isActive('/') ? 'text-ghost-gold' : 'text-slate-400'
+              }`}
+              aria-current={isActive('/') ? 'page' : undefined}
+            >
+              Accueil
+            </Link>
+          </li>
+          
+          {/* Formats avec menu déroulant */}
+          <li role="none" className="relative" ref={formatsDropdownRef}>
+            <div 
+              className="relative"
+              onMouseEnter={handleFormatsMouseEnter}
+              onMouseLeave={handleFormatsMouseLeave}
+            >
               <Link
-                to={item.path}
+                to="/formats"
                 className={`text-sm font-medium tracking-wide transition-colors hover:text-ghost-gold focus:outline-none focus:ring-2 focus:ring-ghost-gold focus:ring-offset-2 focus:ring-offset-ghost-black rounded ${
-                  isActive(item.path) ? 'text-ghost-gold' : 'text-slate-400'
+                  isFormatsActive ? 'text-ghost-gold' : 'text-slate-400'
                 }`}
-                aria-current={isActive(item.path) ? 'page' : undefined}
+                aria-current={isFormatsActive ? 'page' : undefined}
+                onClick={() => setIsFormatsDropdownOpen(!isFormatsDropdownOpen)}
               >
-                {item.label}
+                Formats
+                <svg 
+                  className={`inline-block ml-1 w-3 h-3 transition-transform duration-200 ${isFormatsDropdownOpen ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
               </Link>
-            </li>
-          ))}
+              
+              {/* Menu déroulant */}
+              {isFormatsDropdownOpen && (
+                <div 
+                  className="absolute top-full left-0 pt-2 w-56 z-50"
+                  role="menu"
+                  aria-label="Sous-menu Formats"
+                >
+                  <div className="bg-ghost-black/95 backdrop-blur-md border border-white/10 rounded-lg shadow-xl py-2">
+                    {formatsItems.map((item) => (
+                      <Link
+                        key={item.path}
+                        to={item.path}
+                        className={`block px-4 py-2 text-sm transition-colors hover:bg-white/5 hover:text-ghost-gold focus:outline-none focus:ring-2 focus:ring-ghost-gold focus:ring-inset ${
+                          isActive(item.path) ? 'text-ghost-gold bg-white/5' : 'text-slate-400'
+                        }`}
+                        role="menuitem"
+                        aria-current={isActive(item.path) ? 'page' : undefined}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </li>
+
+          <li role="none">
+            <Link
+              to="/thematiques"
+              className={`text-sm font-medium tracking-wide transition-colors hover:text-ghost-gold focus:outline-none focus:ring-2 focus:ring-ghost-gold focus:ring-offset-2 focus:ring-offset-ghost-black rounded ${
+                isActive('/thematiques') ? 'text-ghost-gold' : 'text-slate-400'
+              }`}
+              aria-current={isActive('/thematiques') ? 'page' : undefined}
+            >
+              Thématiques
+            </Link>
+          </li>
+          
+          <li role="none">
+            <Link
+              to="/a-propos"
+              className={`text-sm font-medium tracking-wide transition-colors hover:text-ghost-gold focus:outline-none focus:ring-2 focus:ring-ghost-gold focus:ring-offset-2 focus:ring-offset-ghost-black rounded ${
+                isActive('/a-propos') ? 'text-ghost-gold' : 'text-slate-400'
+              }`}
+              aria-current={isActive('/a-propos') ? 'page' : undefined}
+            >
+              À Propos
+            </Link>
+          </li>
           <li role="none">
             <Link
               to="/a-propos#contact"
