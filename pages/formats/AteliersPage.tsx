@@ -8,7 +8,7 @@ const AteliersPage: React.FC = () => {
       <SEOHead
         title="Ateliers Rythmique & Chant Improvisé"
         description="Ateliers ponctuels autour du rythme signé et du chant improvisé. Accessibles à tous les niveaux, sessions de 2h15. Découvrez cette méthode de communication rythmique venue d'Argentine."
-        url="https://ghost-note.fr/#/formats/ateliers"
+        url="https://ghost-note.fr/formats/ateliers"
         image="/images/batucada.jpg"
       />
       <div className="pt-32 pb-24 px-6 animate-fade-in">

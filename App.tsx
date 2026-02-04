@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, lazy, Suspense } from 'react';
-import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SkipLink from './components/SkipLink';
@@ -59,10 +59,13 @@ const App: React.FC = () => {
 
 // Helper component to scroll to top on route change
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    // Ne pas scroller vers le haut si on a un hash (ancre)
+    if (!hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
   return null;
 };
 

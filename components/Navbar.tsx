@@ -204,7 +204,23 @@ const Navbar: React.FC = () => {
           </li>
           <li role="none">
             <Link
-              to="/a-propos#contact"
+              to="/a-propos?scroll=contact"
+              onClick={(e) => {
+                // Si on est déjà sur la page, scroller directement
+                if (location.pathname === '/a-propos') {
+                  e.preventDefault();
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    const headerOffset = 80;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }}
               className="px-5 py-2 bg-ghost-orange/10 border border-ghost-orange/30 text-ghost-orange rounded-full text-sm font-bold hover:bg-ghost-orange hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-ghost-orange focus:ring-offset-2 focus:ring-offset-ghost-black"
               aria-label="Aller à la page de contact"
             >

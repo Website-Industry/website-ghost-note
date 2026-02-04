@@ -7,9 +7,9 @@ const CommunicationGestuellePage: React.FC = () => {
     <>
       <SEOHead
         title="Communication Gestuelle dans l'Improvisation Musicale"
-        description="Découvrez le Rythme Signé et le Vocal Painting : des langages gestuels qui démocratisent la création musicale collective. Outils de libération créative pour improviser ensemble sans barrière technique."
-        url="https://ghost-note.fr/#/communication-gestuelle"
-        image="/images/logo/logo-with-text.png"
+        description="Découvrez le Rythme Signé et le Vocal Painting : des langages gestuels qui démocratisent la création musicale collective. Outils de libération créative pour improviser ensemble sans barrière technique. Ateliers à Toulouse avec Ghost-Note."
+        url="https://ghost-note.fr/communication-gestuelle"
+        image="/images/rythme_signe.png"
       />
       <div className="animate-fade-in">
         {/* Hero */}

@@ -8,7 +8,7 @@ const LeLooperPage: React.FC = () => {
       <SEOHead
         title="Le Looper"
         description="Une communauté toulousaine pour créer, expérimenter et partager autour de la musique numérique. Collectif qui rassemble des passionné·es de création musicale numérique à Toulouse."
-        url="https://ghost-note.fr/#/thematiques/lelooper"
+        url="https://ghost-note.fr/thematiques/lelooper"
         image="/images/logo/logo-with-text.png"
       />
       <div className="pt-32 pb-24 px-6 animate-fade-in">

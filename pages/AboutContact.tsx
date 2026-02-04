@@ -1,10 +1,14 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import SEOHead from '../components/SEOHead';
 import StructuredData from '../components/StructuredData';
 import NewsletterButton from '../components/NewsletterButton';
 
 const AboutContact: React.FC = () => {
+  const location = useLocation();
+  const [searchParams] = useSearchParams();
+  const contactRef = useRef<HTMLElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,6 +16,36 @@ const AboutContact: React.FC = () => {
     message: ''
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  // Scroll vers l'ancre contact si présent dans l'URL ou paramètre de requête
+  useEffect(() => {
+    const scrollToContact = () => {
+      const element = document.getElementById('contact');
+      if (element) {
+        const headerOffset = 80; // Hauteur du header
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    };
+
+    // Vérifier le paramètre de requête scroll=contact
+    const scrollParam = searchParams.get('scroll');
+    if (scrollParam === 'contact') {
+      // Attendre que le DOM soit rendu
+      setTimeout(scrollToContact, 500);
+    }
+
+    // Vérifier aussi si on a un hash dans l'URL
+    const hash = window.location.hash;
+    if (hash.includes('contact')) {
+      setTimeout(scrollToContact, 500);
+    }
+  }, [location.pathname, searchParams]);
 
   const faqs = [
     {
@@ -75,7 +109,7 @@ const AboutContact: React.FC = () => {
       <SEOHead
         title="À Propos & Contact"
         description="Marc Charton, fondateur de Ghost-Note. Autodidacte passionné, j'ai tout appris seul sans diplôme d'État ni conservatoire. Contactez-moi pour discuter de vos besoins et projets musicaux."
-        url="https://ghost-note.fr/#/a-propos"
+        url="https://ghost-note.fr/a-propos"
         image="/images/logo/logo-with-text.png"
       />
       <StructuredData data={faqSchema} />
@@ -136,7 +170,7 @@ const AboutContact: React.FC = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="px-6" aria-labelledby="contact-heading">
+      <section id="contact" ref={contactRef} className="px-6" aria-labelledby="contact-heading">
         <div className="max-w-4xl mx-auto bg-ghost-brown/20 p-8 md:p-16 rounded-3xl border border-ghost-orange/20 shadow-2xl">
           <div className="text-center mb-12">
             <h2 id="contact-heading" className="text-4xl font-serif italic mb-4">On discute ?</h2>
