@@ -50,3 +50,4 @@ Pour de meilleures performances, optimisez les images avant de les utiliser :
 Si une image n'est pas trouvée, elle ne s'affichera pas mais le site continuera de fonctionner. 
 Vous pouvez utiliser des placeholders temporaires en attendant d'avoir les vraies images.
 
+

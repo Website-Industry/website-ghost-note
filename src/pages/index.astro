@@ -28,9 +28,9 @@ const faqItems = [
 ];
 
 // Chemins vers les images
-const heroImage = '/images/hero.jpg';
-const visionImage = '/images/vision.jpg';
-const rythmeImage = '/images/rythme.png';
+const visionImage = '/images/atelier.jpg';
+const approfondirImage = '/images/batterie.jpg';
+const rythmeSigneImage = '/images/rythme_signe.png';
 ---
 
 <BaseLayout 
@@ -52,12 +52,22 @@ const rythmeImage = '/images/rythme.png';
   
   <!-- Section approfondir le rythme -->
   <ImageSection
-    image={rythmeImage}
+    image={approfondirImage}
     alt="Approfondir le rythme"
     title="Approfondir le rythme"
     content="Ces ateliers sont pour vous si vous désirez mieux comprendre comment fonctionne le rythme, approfondir votre pratique et votre sensibilité à la pulsation et ses rouages. Inspiré de nombreuses pratiques, nous découvrirons ensemble les multiples facettes du rythme."
     imagePosition="right"
     speed={0.5}
+  />
+  
+  <!-- Section rythme signé -->
+  <ImageSection
+    image={rythmeSigneImage}
+    alt="Rythme signé"
+    title="Rythme signé"
+    content="Rythme signé, improvisation vocale, théorie musicale, MAO, écoute active... Autant de facettes que nous explorons ensemble pour développer votre sensibilité musicale et votre autonomie créative."
+    imagePosition="left"
+    speed={0.4}
   />
   
   <!-- Section vision texte -->

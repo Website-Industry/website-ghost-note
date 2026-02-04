@@ -1,41 +1,32 @@
 ---
-import ParallaxImage from './ParallaxImage.astro';
 import Button from './Button.astro';
 
-// Chemin vers l'image hero et le logo
-const heroImage = '/images/hero.jpg';
+// Chemin vers le logo
 const logoImage = '/images/logo.png';
 ---
 
-<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden -mt-20 pt-20">
-  <ParallaxImage 
-    src={heroImage}
-    alt="Ghost Note - Transmission musicale"
-    speed={0.3}
-    class="absolute inset-0"
-  >
-    <div class="parallax-content container mx-auto px-6 py-24 text-center relative z-10">
-      <div class="max-w-4xl mx-auto">
-        <div class="mb-8 flex justify-center">
-          <img 
-            src={logoImage} 
-            alt="Ghost-Note Logo" 
-            class="h-32 md:h-48 w-auto mx-auto float-animation"
-          />
-        </div>
-        <p class="text-xl md:text-3xl text-fg-muted mb-12 max-w-2xl mx-auto text-balance leading-relaxed">
-          Transmission musicale : rythme, écoute, création, impro
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button href="/formats" class="text-lg px-8 py-4">
-            Découvrir les formats
-          </Button>
-          <Button href="/contact" variant="outline" class="text-lg px-8 py-4">
-            Nous contacter
-          </Button>
-        </div>
+<section class="relative min-h-[90vh] flex items-center justify-center bg-bg -mt-20 pt-20">
+  <div class="container mx-auto px-6 py-24 text-center">
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-8 flex justify-center">
+        <img 
+          src={logoImage} 
+          alt="Ghost-Note Logo" 
+          class="h-32 md:h-48 w-auto mx-auto float-animation"
+        />
+      </div>
+      <p class="text-xl md:text-3xl text-fg-muted mb-12 max-w-2xl mx-auto text-balance leading-relaxed">
+        Transmission musicale : rythme, écoute, création, impro
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button href="/formats" class="text-lg px-8 py-4">
+          Découvrir les formats
+        </Button>
+        <Button href="/contact" variant="outline" class="text-lg px-8 py-4">
+          Nous contacter
+        </Button>
       </div>
     </div>
-  </ParallaxImage>
+  </div>
 </section>
 

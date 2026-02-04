@@ -107,3 +107,4 @@ Section avec image et texte côte à côte :
 - Le header fixe nécessite un padding-top sur le premier élément
 - Les effets glass utilisent `backdrop-filter` (support moderne des navigateurs)
 
+

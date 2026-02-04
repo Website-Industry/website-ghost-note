@@ -13,14 +13,15 @@ interface Props {
 const { image, alt, title, content, imagePosition = 'left', speed = 0.4 } = Astro.props;
 ---
 
-<section class="relative min-h-[80vh] flex items-center">
+<section class="relative min-h-[80vh]">
   <div class={`grid grid-cols-1 lg:grid-cols-2 gap-0 w-full ${imagePosition === 'right' ? 'lg:flex-row-reverse' : ''}`}>
-    <div class="relative h-[50vh] lg:h-[80vh] overflow-hidden">
+    <div class="relative h-[50vh] lg:h-[80vh] overflow-hidden w-full m-0 p-0" style="background: transparent;">
       <ParallaxImage 
         src={image}
         alt={alt}
         speed={speed}
-        class="h-full"
+        overlay={false}
+        class="w-full h-full m-0 p-0"
       />
     </div>
     <div class="flex items-center justify-center p-12 lg:p-16 bg-bg-secondary">
