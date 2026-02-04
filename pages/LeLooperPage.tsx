@@ -9,7 +9,7 @@ const LeLooperPage: React.FC = () => {
         title="Le Looper"
         description="Une communauté toulousaine pour créer, expérimenter et partager autour de la musique numérique. Collectif qui rassemble des passionné·es de création musicale numérique à Toulouse."
         url="https://ghost-note.fr/#/thematiques/lelooper"
-        image="/images/logo.png"
+        image="/images/logo/logo-with-text.png"
       />
       <div className="pt-32 pb-24 px-6 animate-fade-in">
         <div className="max-w-7xl mx-auto">

@@ -21,7 +21,7 @@ export const organizationSchema = {
   name: 'Ghost-Note',
   description: 'Transmission musicale organique à Toulouse. Cours individuels, ateliers collectifs, CDMC.',
   url: 'https://ghost-note.fr',
-  logo: 'https://ghost-note.fr/images/logo.png',
+  logo: 'https://ghost-note.fr/images/logo/logo-with-text.png',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Toulouse',

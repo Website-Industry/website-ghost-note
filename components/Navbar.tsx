@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
           aria-label="Retour à l'accueil Ghost-Note"
         >
           <img 
-            src="/images/logo.png" 
+            src="/images/logo/logo_white_transparent.png" 
             alt="Logo Ghost-Note" 
             className="w-10 h-10 transition-transform duration-500 group-hover:rotate-12"
             width="40"

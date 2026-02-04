@@ -37,7 +37,7 @@ const Themes: React.FC = () => {
         title="Les Thématiques"
         description="Les 4 piliers de Ghost-Note : Piano, Théorie Musicale, Rythmique et MAO. Chaque thématique est disponible selon vos besoins en cours individuels, collectifs (CDMC) ou ateliers."
         url="https://ghost-note.fr/#/thematiques"
-        image="/images/logo.png"
+        image="/images/logo/logo-with-text.png"
       />
       <div className="pt-32 pb-24 px-6 animate-fade-in">
       <div className="max-w-7xl mx-auto">
