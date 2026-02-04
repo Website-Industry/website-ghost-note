@@ -58,7 +58,7 @@ const Formats: React.FC = () => {
             </div>
             <div className="space-y-6">
               <span className="text-ghost-gold font-bold uppercase tracking-widest text-sm">Cours de Musique Chill</span>
-              <h2 className="text-4xl font-bold">CDMC Collective</h2>
+              <h2 className="text-4xl font-bold">Cours Collectifs (CDMC)</h2>
               <p className="text-lg text-slate-300 leading-relaxed font-light">
                 Un format d'apprentissage collectif avec une séance par mois. Des modules par thématique (Théorie, Piano, Rythmique, MAO) dans une ambiance conviviale.
               </p>

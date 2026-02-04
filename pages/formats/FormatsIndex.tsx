@@ -1,9 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEOHead from '../../components/SEOHead';
 
 const FormatsIndex: React.FC = () => {
   return (
-    <div className="pt-32 pb-24 px-6 animate-fade-in">
+    <>
+      <SEOHead
+        title="Les Formats"
+        description="Découvrez tous les formats proposés par Ghost-Note : CDMC, ateliers rythmique & chant, cours individuels. Plusieurs façons d'explorer la musique selon vos envies et votre rythme."
+        url="https://ghost-note.fr/#/formats"
+        image="/images/atelier.jpg"
+      />
+      <div className="pt-32 pb-24 px-6 animate-fade-in">
       <div className="max-w-7xl mx-auto">
         <header className="mb-20 text-center">
           <h1 className="text-5xl md:text-7xl font-serif italic mb-6">Les Formats</h1>
@@ -40,8 +48,11 @@ const FormatsIndex: React.FC = () => {
               <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/10 order-1 lg:order-2 group-hover:border-ghost-orange/50 transition-colors">
                 <img 
                   src="/images/batterie.jpg" 
-                  alt="Cours Individuels" 
+                  alt="Cours individuels - Accompagnement personnalisé en musique" 
                   className="w-full h-full object-cover opacity-60 grayscale group-hover:opacity-70 group-hover:grayscale-0 transition-all"
+                  loading="lazy"
+                  width="1200"
+                  height="675"
                 />
                 <div className="absolute inset-0 bg-ghost-orange/10 group-hover:bg-ghost-orange/20 transition-colors"></div>
               </div>
@@ -54,8 +65,11 @@ const FormatsIndex: React.FC = () => {
               <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/10 group-hover:border-ghost-gold/50 transition-colors">
                 <img 
                   src="/images/atelier.jpg" 
-                  alt="CDMC Collective" 
+                  alt="CDMC Collective - Format collectif mensuel de musique" 
                   className="w-full h-full object-cover opacity-60 grayscale group-hover:opacity-70 group-hover:grayscale-0 transition-all"
+                  loading="lazy"
+                  width="1200"
+                  height="675"
                 />
                 <div className="absolute inset-0 bg-ghost-gold/10 group-hover:bg-ghost-gold/20 transition-colors"></div>
               </div>
@@ -93,8 +107,11 @@ const FormatsIndex: React.FC = () => {
               <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/10 order-1 lg:order-2 group-hover:border-ghost-orange/50 transition-colors">
                 <img 
                   src="/images/batucada.jpg" 
-                  alt="Ateliers Rythme Signé" 
+                  alt="Ateliers Rythme Signé - Ateliers collectifs de rythmique et improvisation vocale" 
                   className="w-full h-full object-cover opacity-60 grayscale group-hover:opacity-70 group-hover:grayscale-0 transition-all"
+                  loading="lazy"
+                  width="1200"
+                  height="675"
                 />
                 <div className="absolute inset-0 bg-ghost-brown/40 group-hover:bg-ghost-brown/50 transition-colors"></div>
               </div>
@@ -102,7 +119,8 @@ const FormatsIndex: React.FC = () => {
           </Link>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

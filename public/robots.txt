@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ghost-note.fr/sitemap.xml
+
+# Bloquer les fichiers de build
+Disallow: /assets/
+Disallow: /node_modules/

@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEOHead from '../../components/SEOHead';
+import StructuredData from '../../components/StructuredData';
+import { courseSchema } from '../../components/StructuredData';
 
 interface FAQItem {
   question: string;
@@ -25,8 +28,20 @@ const CDMCPage: React.FC = () => {
   ];
 
   return (
-    <div className="pt-32 pb-24 px-6 animate-fade-in">
-      <div className="max-w-7xl mx-auto">
+    <>
+      <SEOHead
+        title="CDMC - Cours de Musique Chill"
+        description="CDMC (Cours de Musique Chill) : format collectif mensuel pour explorer théorie, pratique, écoute et MAO dans une ambiance chill. Une soirée par mois dans une ambiance conviviale."
+        url="https://ghost-note.fr/#/formats/cdmc"
+        image="/images/atelier.jpg"
+      />
+      <StructuredData data={courseSchema(
+        'CDMC - Cours de Musique Chill',
+        'Format collectif mensuel pour explorer théorie, pratique, écoute et MAO dans une ambiance chill.',
+        'https://ghost-note.fr/#/formats/cdmc'
+      )} />
+      <div className="pt-32 pb-24 px-6 animate-fade-in">
+        <div className="max-w-7xl mx-auto">
         {/* Hero */}
         <header className="mb-20 text-center">
           <h1 className="text-5xl md:text-7xl font-serif italic mb-6">CDMC</h1>
@@ -113,8 +128,9 @@ const CDMCPage: React.FC = () => {
             ← Retour aux formats
           </Link>
         </section>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

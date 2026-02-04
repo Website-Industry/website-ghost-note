@@ -1,10 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEOHead from '../components/SEOHead';
 
 const LeLooperPage: React.FC = () => {
   return (
-    <div className="pt-32 pb-24 px-6 animate-fade-in">
-      <div className="max-w-7xl mx-auto">
+    <>
+      <SEOHead
+        title="Le Looper"
+        description="Une communauté toulousaine pour créer, expérimenter et partager autour de la musique numérique. Collectif qui rassemble des passionné·es de création musicale numérique à Toulouse."
+        url="https://ghost-note.fr/#/thematiques/lelooper"
+        image="/images/logo.png"
+      />
+      <div className="pt-32 pb-24 px-6 animate-fade-in">
+        <div className="max-w-7xl mx-auto">
         {/* Hero */}
         <header className="mb-20 text-center">
           <h1 className="text-5xl md:text-7xl font-serif italic mb-6">Le Looper</h1>
@@ -165,8 +173,9 @@ const LeLooperPage: React.FC = () => {
             ← Retour aux thématiques
           </Link>
         </section>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

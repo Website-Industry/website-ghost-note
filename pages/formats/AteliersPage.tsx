@@ -1,9 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEOHead from '../../components/SEOHead';
 
 const AteliersPage: React.FC = () => {
   return (
-    <div className="pt-32 pb-24 px-6 animate-fade-in">
+    <>
+      <SEOHead
+        title="Ateliers Rythmique & Chant Improvisé"
+        description="Ateliers ponctuels autour du rythme signé et du chant improvisé. Accessibles à tous les niveaux, sessions de 2h15. Découvrez cette méthode de communication rythmique venue d'Argentine."
+        url="https://ghost-note.fr/#/formats/ateliers"
+        image="/images/batucada.jpg"
+      />
+      <div className="pt-32 pb-24 px-6 animate-fade-in">
       <div className="max-w-7xl mx-auto">
         {/* Hero */}
         <header className="mb-20 text-center">
@@ -110,7 +118,8 @@ const AteliersPage: React.FC = () => {
           </div>
         </section>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

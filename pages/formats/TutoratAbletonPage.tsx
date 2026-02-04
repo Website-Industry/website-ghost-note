@@ -1,9 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEOHead from '../../components/SEOHead';
 
 const TutoratAbletonPage: React.FC = () => {
   return (
-    <div className="pt-32 pb-24 px-6 animate-fade-in">
+    <>
+      <SEOHead
+        title="Tutorat Ableton Live"
+        description="Accompagnement dans le cadre de la formation professionnelle Sawup. Je suis tuteur certifié pour accompagner les apprenants sur Ableton Live avec des rendez-vous individuels et un suivi personnalisé."
+        url="https://ghost-note.fr/#/thematiques/tutorat-ableton"
+        image="/images/logo.png"
+      />
+      <div className="pt-32 pb-24 px-6 animate-fade-in">
       <div className="max-w-7xl mx-auto">
         {/* Hero */}
         <header className="mb-20 text-center">
@@ -156,7 +164,8 @@ const TutoratAbletonPage: React.FC = () => {
           </Link>
         </section>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

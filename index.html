@@ -4,11 +4,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0a0a" />
     <title>Ghost-Note | Musique Organique Toulouse</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="Transmission musicale organique à Toulouse. Cours individuels, ateliers collectifs, CDMC. Une approche accessible et bienveillante pour explorer la musique sans barrières académiques." />
+    
+    <!-- Preconnect pour améliorer les performances -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    
+    <!-- Preload des polices critiques -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -63,6 +73,34 @@
       }
       .card-gradient {
         background: linear-gradient(135deg, rgba(69, 26, 3, 0.4) 0%, rgba(10, 10, 10, 0.8) 100%);
+      }
+      /* Accessibilité : focus visible */
+      *:focus-visible {
+        outline: 2px solid #d4af37;
+        outline-offset: 2px;
+      }
+      /* Skip link styles */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+      .sr-only:focus {
+        position: fixed;
+        width: auto;
+        height: auto;
+        padding: 0.5rem 1rem;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+        z-index: 10000;
       }
     </style>
   <script type="importmap">

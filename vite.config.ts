@@ -18,6 +18,27 @@ export default defineConfig(({ mode }) => {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
-      }
+      },
+      build: {
+        // Optimisations de build
+        minify: 'esbuild',
+        cssMinify: true,
+        sourcemap: false,
+        rollupOptions: {
+          output: {
+            manualChunks: {
+              'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+            },
+          },
+        },
+        // Limiter la taille des chunks
+        chunkSizeWarningLimit: 1000,
+        // Optimiser les assets
+        assetsInlineLimit: 4096,
+      },
+      // Optimisations de performance
+      optimizeDeps: {
+        include: ['react', 'react-dom', 'react-router-dom'],
+      },
     };
 });
