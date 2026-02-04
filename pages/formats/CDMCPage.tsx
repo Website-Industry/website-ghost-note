@@ -1,31 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import SEOHead from '../../components/SEOHead';
 import StructuredData from '../../components/StructuredData';
 import { courseSchema } from '../../components/StructuredData';
 
-interface FAQItem {
-  question: string;
-  answer: string;
-}
-
 const CDMCPage: React.FC = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const faqItems: FAQItem[] = [
-    {
-      question: "CDMC possède-t-il son propre site ?",
-      answer: "Oui, CDMC possède son site dédié. Cette page présente brièvement le format. Pour plus d'informations et pour vous inscrire, consultez le site CDMC.",
-    },
-    {
-      question: "Quelle est la fréquence des sessions CDMC ?",
-      answer: "CDMC se déroule une fois par mois, généralement en soirée. Consultez le site CDMC pour connaître les dates précises.",
-    },
-    {
-      question: "Faut-il un niveau musical particulier ?",
-      answer: "Non, CDMC est accessible à tous les niveaux. L'approche est progressive et adaptée à chacun.",
-    },
-  ];
 
   return (
     <>
@@ -92,31 +71,6 @@ const CDMCPage: React.FC = () => {
           >
             Visiter cdmc-toulouse.fr →
           </a>
-        </section>
-
-        {/* FAQ */}
-        <section className="mb-16 max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center">Questions fréquentes</h2>
-          <div className="space-y-4">
-            {faqItems.map((item, index) => (
-              <div key={index} className="border border-white/10 rounded-xl overflow-hidden bg-white/5">
-                <button
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
-                >
-                  <span className="font-semibold text-lg">{item.question}</span>
-                  <span className="text-2xl text-ghost-gold">
-                    {openIndex === index ? '−' : '+'}
-                  </span>
-                </button>
-                {openIndex === index && (
-                  <div className="p-6 pt-0 text-slate-400 font-light">
-                    {item.answer}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
         </section>
 
         {/* Retour */}

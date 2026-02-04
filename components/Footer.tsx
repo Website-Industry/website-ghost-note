@@ -85,9 +85,7 @@ const Footer: React.FC = () => {
         <address className="not-italic">
           <h4 className="text-ghost-gold font-bold mb-6 text-sm uppercase tracking-widest">Localisation</h4>
           <p className="text-slate-400 text-sm leading-relaxed">
-            31000 Toulouse, France<br />
-            Enseignement en home-studio<br />
-            & Ateliers nomades
+            31000 Toulouse, France
           </p>
         </address>
       </div>

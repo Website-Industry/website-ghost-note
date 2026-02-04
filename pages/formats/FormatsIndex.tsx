@@ -33,7 +33,7 @@ const FormatsIndex: React.FC = () => {
                 <ul className="space-y-4 text-slate-400">
                   <li className="flex items-center gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-ghost-gold"></div>
-                    Public : Adultes de 20 à 80 ans
+                    Public : Adultes
                   </li>
                   <li className="flex items-center gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-ghost-gold"></div>
@@ -65,7 +65,7 @@ const FormatsIndex: React.FC = () => {
               <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/10 group-hover:border-ghost-gold/50 transition-colors">
                 <img 
                   src="/images/atelier.jpg" 
-                  alt="CDMC Collective - Format collectif mensuel de musique" 
+                  alt="Cours Collectifs - Format collectif mensuel de musique" 
                   className="w-full h-full object-cover opacity-60 grayscale group-hover:opacity-70 group-hover:grayscale-0 transition-all"
                   loading="lazy"
                   width="1200"
@@ -75,7 +75,7 @@ const FormatsIndex: React.FC = () => {
               </div>
               <div className="space-y-6">
                 <span className="text-ghost-gold font-bold uppercase tracking-widest text-sm">Cours de Musique Chill</span>
-                <h2 className="text-4xl font-bold group-hover:text-ghost-gold transition-colors">CDMC Collective</h2>
+                <h2 className="text-4xl font-bold group-hover:text-ghost-gold transition-colors">Cours Collectifs</h2>
                 <p className="text-lg text-slate-300 leading-relaxed font-light">
                   Un format d'apprentissage collectif avec une séance par mois. Des modules par thématique (Théorie, Piano, Rythmique, MAO) dans une ambiance conviviale.
                 </p>
@@ -83,9 +83,15 @@ const FormatsIndex: React.FC = () => {
                   <p className="text-sm text-slate-400 mb-4 italic">
                     CDMC possède son propre site dédié avec calendrier et inscriptions.
                   </p>
-                  <div className="inline-block px-6 py-3 border border-ghost-gold text-ghost-gold rounded-full font-bold group-hover:bg-ghost-gold group-hover:text-black transition-all">
+                  <a 
+                    href="https://cdmc-toulouse.fr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-block px-6 py-3 border border-ghost-gold text-ghost-gold rounded-full font-bold hover:bg-ghost-gold hover:text-black transition-all cursor-pointer"
+                  >
                     Visiter cdmc-toulouse.fr →
-                  </div>
+                  </a>
                 </div>
               </div>
             </section>
@@ -118,6 +124,48 @@ const FormatsIndex: React.FC = () => {
             </section>
           </Link>
         </div>
+
+        {/* Communities Section */}
+        <section className="mt-32 border-t border-white/5 pt-24" aria-labelledby="communities-heading">
+          <h2 id="communities-heading" className="text-4xl font-serif italic mb-12 text-ghost-gold">Autres Activités & Communautés</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8" role="list">
+            <article className="block p-8 bg-white/5 rounded-2xl border border-white/5 space-y-4 hover:bg-white/10 hover:border-white/20 transition-all group focus-within:ring-2 focus-within:ring-ghost-gold rounded-2xl" role="listitem">
+              <Link to="/thematiques/tutorat-ableton" className="focus:outline-none">
+                <h3 className="text-xl font-bold group-hover:text-ghost-orange transition-colors">Tutorat Sawup</h3>
+                <p className="text-sm text-slate-400 font-light leading-relaxed">
+                  J'accompagne également des apprenants en tant que tuteur pour le centre de formation professionnelle Sawup dans le cadre de leur formation sur Ableton Live.
+                </p>
+                <span className="text-ghost-orange text-sm font-bold group-hover:underline inline-flex items-center gap-2">
+                  En savoir plus
+                  <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </Link>
+            </article>
+            <article className="block p-8 bg-white/5 rounded-2xl border border-white/5 space-y-4 hover:bg-white/10 hover:border-white/20 transition-all group focus-within:ring-2 focus-within:ring-ghost-gold rounded-2xl" role="listitem">
+              <Link to="/thematiques/lelooper" className="focus:outline-none">
+                <h3 className="text-xl font-bold group-hover:text-ghost-orange transition-colors">Le Looper</h3>
+                <p className="text-sm text-slate-400 font-light leading-relaxed">
+                  Communauté autour de la musique numérique à Toulouse. Créer des espaces de rencontre et de création collective.
+                </p>
+                <span className="text-ghost-orange text-sm font-bold group-hover:underline inline-flex items-center gap-2">
+                  En savoir plus
+                  <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </Link>
+            </article>
+            <article className="p-8 bg-white/5 rounded-2xl border border-white/5 space-y-4" role="listitem">
+              <h3 className="text-xl font-bold">La Pulse</h3>
+              <p className="text-sm text-slate-400 font-light leading-relaxed">
+                Communauté toulousaine de chant improvisé et percussion corporelle. Marc y anime des ateliers réguliers.
+              </p>
+              <span className="text-slate-600 text-sm font-bold italic">Site bientôt disponible</span>
+            </article>
+          </div>
+        </section>
       </div>
       </div>
     </>
