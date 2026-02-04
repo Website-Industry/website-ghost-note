@@ -10,7 +10,7 @@ interface SEOHeadProps {
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
-  title = 'Ghost-Note | Musique Organique Toulouse',
+  title = 'Ghost-Note',
   description = 'Transmission musicale organique à Toulouse. Cours individuels, ateliers collectifs, CDMC. Une approche accessible et bienveillante pour explorer la musique sans barrières académiques.',
   image = 'https://ghost-note.fr/images/logo/logo-with-text.png',
   url = 'https://ghost-note.fr',
