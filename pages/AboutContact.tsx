@@ -75,7 +75,7 @@ const AboutContact: React.FC = () => {
         title="À Propos & Contact"
         description="Marc Charton, fondateur de Ghost-Note. Autodidacte passionné, j'ai tout appris seul sans diplôme d'État ni conservatoire. Contactez-moi pour discuter de vos besoins et projets musicaux."
         url="https://ghost-note.fr/#/a-propos"
-        image="/images/logo.png"
+        image="/images/logo/logo-with-text.png"
       />
       <StructuredData data={faqSchema} />
       <div className="pt-32 pb-24 animate-fade-in">

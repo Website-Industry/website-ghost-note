@@ -12,9 +12,14 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="col-span-1 md:col-span-2">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center" aria-hidden="true">
-              <span className="text-black text-[10px] font-bold">gn</span>
-            </div>
+            <img 
+              src="/images/logo/logo-no-text.png" 
+              alt="Logo Ghost-Note" 
+              className="w-8 h-8"
+              width="32"
+              height="32"
+              loading="lazy"
+            />
             <span className="text-lg font-bold tracking-tighter uppercase">Ghost-Note</span>
           </div>
           <p className="text-slate-500 max-w-sm mb-6 leading-relaxed">

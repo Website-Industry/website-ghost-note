@@ -40,7 +40,7 @@ const Home: React.FC = () => {
         title="Ghost-Note | Musique Organique Toulouse"
         description="Transmission musicale organique à Toulouse. Cours individuels, ateliers collectifs, CDMC. Une approche accessible et bienveillante pour explorer la musique sans barrières académiques."
         url="https://ghost-note.fr/"
-        image="/images/logo.png"
+        image="/images/logo/logo-with-text.png"
       />
       <StructuredData data={organizationSchema} />
       <div className="animate-fade-in">
